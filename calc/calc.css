@@ -1,0 +1,65 @@
+* {
+    font: 16px / 24px "Consolas", monospace;
+}
+ol {
+    color: #999;
+}
+kbd, code {
+    display: block;
+    color: #000;
+}
+code {
+    color: #069;
+    margin-left: -1.25em;
+}
+code::before {
+    /*content: "\21d2\a0";*/
+    content: "\21B3\a0";
+    color: #999;
+}
+.system code {
+    color: #999;
+}
+.error code {
+    color: #f00;
+}
+.active kbd {
+    display: none;
+}
+input {
+    width: 100%;
+    height: 24px;
+    border: none;
+    outline: none;
+    padding: 0 0;
+    background-color: #ffc;
+}
+#open-input {
+    display: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    background-color: #EEE;
+    padding: 4px 0;
+    overflow: hidden;
+}
+
+ul li {
+    float: left;
+    padding: 0 8px;
+    border-left: 1px solid #999;
+}
+
+ul li:first-child {
+    border-left: none;
+    font-weight: bold;
+}
+
+ul li.right {
+    float: right;
+}
+ul li.right:last-child {
+    border-left: none;
+}
