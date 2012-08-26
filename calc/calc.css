@@ -46,6 +46,11 @@ ul {
     overflow: hidden;
 }
 
+a {
+    color: #009;
+    font-size: 90%;
+}
+
 ul li {
     float: left;
     padding: 0 8px;

@@ -1,5 +1,8 @@
 $(function() {
-    var codeLines = [];
+    var codeLines = null;
+    try { codeLines = JSON.parse(localStorage["code"]); } catch(e) { }
+    if (!$.isArray(codeLines)) codeLines = [];
+
     var isCalculated = false;
 
     var ul = $("ol");
@@ -21,6 +24,7 @@ $(function() {
     var codeIsUpdated = function() {
         sandbox.postMessage(codeLines, "*");
         saveAsLink.update(codeLines);
+        localStorage["code"] = JSON.stringify(codeLines);
         isCalculated = true;
     };
 
@@ -137,9 +141,17 @@ $(function() {
         var reader = new FileReader();
         reader.onload = function() {
             codeLines = $.trim(this.result).split(/[\r\n]+/);
+            activeLine = codeLines.length;
             codeIsUpdated();
         };
         reader.readAsText(this.files[0], "utf-8");
+    });
+
+    $("#clear-link").click(function() {
+        codeLines = [];
+        activeLine = 0;
+        codeIsUpdated();
+        return false;
     });
 
     $("#example-link").click(function() {
@@ -161,7 +173,8 @@ $(function() {
             "// ↑ This is invalid expression and JSCalc tell you about it.",
             "// As the following lines depend on the previous, you must fix the error before moving on.",
             "// Good luck!"
-       ];
+        ];
+        activeLine = codeLines.length;
         codeIsUpdated();
         return false;
     });
