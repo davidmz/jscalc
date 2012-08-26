@@ -3,6 +3,7 @@
 }
 ol {
     color: #999;
+    margin-top: 50px;
 }
 kbd, code {
     display: block;
@@ -41,9 +42,14 @@ input {
 ul {
     list-style-type: none;
     margin: 0;
-    background-color: #EEE;
+    background-color: rgba(200, 200, 200, 0.6);
     padding: 4px 0;
     overflow: hidden;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 a {

@@ -174,7 +174,7 @@ $(function() {
             "// As the following lines depend on the previous, you must fix the error before moving on.",
             "// Good luck!"
         ];
-        activeLine = codeLines.length;
+        activeLine = 0;
         codeIsUpdated();
         return false;
     });
