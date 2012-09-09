@@ -106,6 +106,15 @@ $(function() {
                 setActiveLine(0);
             } else if (e.keyCode == 35 && e.ctrlKey) { // End
                 setActiveLine(codeLines.length);
+            } else if (e.keyCode == 67 && e.ctrlKey && activeLine > 0) { // Ctrl+C
+                if (window.getSelection().toString() == "") {
+                    var t = $(this).closest("li").prev().find("code").text();
+                    if (t != "") {
+                        prompt("Result for copying:", t);
+                        return false;
+                    }
+                }
+                return true;
             } else {
                 return true;
             }
