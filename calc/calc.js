@@ -75,6 +75,8 @@ $(function() {
         codeIsUpdated();
     };
 
+
+    var returnFocus = false;
     ul
         // .on("blur", "input", function() { setTimeout(function() { input.focus();}, 0); })
         .on("click", "kbd", function() {
@@ -107,12 +109,13 @@ $(function() {
             } else if (e.keyCode == 35 && e.ctrlKey) { // End
                 setActiveLine(codeLines.length);
             } else if (e.keyCode == 67 && e.ctrlKey && activeLine > 0) { // Ctrl+C
-                if (window.getSelection().toString() == "") {
-                    var t = $(this).closest("li").prev().find("code").text();
-                    if (t != "") {
-                        prompt("Result for copying:", t);
-                        return false;
-                    }
+                var sel = window.getSelection();
+                if (sel.toString() == "") {
+                    var r = document.createRange();
+                    r.selectNode($(this).closest("li").prev().find("code")[0]);
+                    sel.removeAllRanges();
+                    sel.addRange(r);
+                    returnFocus = true;
                 }
                 return true;
             } else {
@@ -123,6 +126,12 @@ $(function() {
 
     $(document).on("keydown", function(e) {
         if (!e.ctrlKey && !e.altKey) input.focus();
+    }).on("keyup", function(e) {
+        if (returnFocus) {
+            returnFocus = false;
+            input.select();
+            window.getSelection().collapseToEnd();
+        }
     }).on("focus", function() {
         input.focus();
     });
