@@ -29,7 +29,11 @@
 
                 var code = "", error = null;
                 for (var codeLine = 0; codeLine < codeLines.length; codeLine++) {
-                    code += ((codeLines[codeLine] == "") ? "undefined" : codeLines[codeLine]) + ";\n";
+                    code += (
+                            (codeLines[codeLine] == "") ?
+                                    "undefined" :
+                                    codeLines[codeLine].replace(/(\d+),(\d+)/g, '$1.$2')
+                            ) + ";\n";
                     var resultLine = { txt: "", err: false, sys: !!error };
                     var res = error, isSystem = !!error;
                     if (!error) {

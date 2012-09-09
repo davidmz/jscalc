@@ -161,6 +161,7 @@ $(function() {
             "1 + tan(45 * PI/180) // or not so simple.",
             "// You can find full list of math functions and constatns on this page:",
             "// https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Math",
+            "// Syntax of all expression is JavaScript syntax.",
             "// If you know JavaScript, you can use almost any JS expressions:",
             "a = [10, 20] // yes, you can define variables",
             "a[0] + a[1] // and use those in following lines of code",
