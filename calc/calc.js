@@ -104,11 +104,11 @@ $(function() {
                 } else {
                     return true;
                 }
-            } else if (e.keyCode == 36 && e.ctrlKey) { // Home
+            } else if (e.keyCode == 36 && (e.ctrlKey || e.metaKey)) { // Home
                 setActiveLine(0);
-            } else if (e.keyCode == 35 && e.ctrlKey) { // End
+            } else if (e.keyCode == 35 && (e.ctrlKey || e.metaKey)) { // End
                 setActiveLine(codeLines.length);
-            } else if (e.keyCode == 67 && e.ctrlKey && activeLine > 0) { // Ctrl+C
+            } else if (e.keyCode == 67 && (e.ctrlKey || e.metaKey) && activeLine > 0) { // Ctrl+C or Meta+C
                 var sel = window.getSelection();
                 if (sel.toString() == "") {
                     var r = document.createRange();
@@ -125,7 +125,7 @@ $(function() {
         });
 
     $(document).on("keydown", function(e) {
-        if (!e.ctrlKey && !e.altKey) input.focus();
+        if (!e.ctrlKey && !e.altKey && !e.metaKey) input.focus();
     }).on("keyup", function(e) {
         if (returnFocus) {
             returnFocus = false;
