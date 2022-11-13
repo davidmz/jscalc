@@ -8,7 +8,7 @@ export function Header() {
       <div class={style.actions}>
         <a onClick={doClear}>Clear</a>
         {" | "}
-        <a href="https://github.com/davidmz/jscalc" target="_blank">
+        <a href="https://github.com/davidmz/jscalc#readme" target="_blank">
           GitHub
         </a>
       </div>
