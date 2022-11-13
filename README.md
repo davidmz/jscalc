@@ -15,3 +15,9 @@
 📋 Press Ctrl+C in the empty input and the result of the previous line will be copied to clipboard.
 
 💣 And the last thing: you can make errors:) Wrote an invalid expression and JSCalc will tell you about it. As the following lines depend on the previous, you must fix the error before moving on.
+
+---
+
+Support me if you like this tool!
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U6GCQ9N)
