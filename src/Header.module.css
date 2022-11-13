@@ -1,0 +1,23 @@
+.header {
+  font-size: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  color: var(--result-color);
+}
+
+.actions {
+  color: var(--dim-color);
+}
+
+.header a {
+  cursor: pointer;
+  text-decoration: underline;
+  color: inherit;
+}
+
+.header a:hover {
+  color: var(--fg-color);
+}

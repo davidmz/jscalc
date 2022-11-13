@@ -1,0 +1,12 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": ["source.fixAll.eslint"],
+  "eslint.validate": ["javascript", "typescript", "typescriptreact"],
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.jsx": "${capture}.js, $(capture).module.css",
+    "*.tsx": "${capture}.ts, $(capture).module.css"
+  },
+  "explorer.fileNesting.expand": true,
+  "cSpell.words": ["jscalc", "preact"]
+}

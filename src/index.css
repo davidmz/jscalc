@@ -1,0 +1,51 @@
+:root {
+  font-family: "Noto Sans Mono", monospace;
+  font-size: fluid(20px / 800px, 16px / 320px);
+  line-height: 1.75;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+
+  transition: all 0.2s;
+
+  /* Colors */
+  --bg-color: hsl(0, 0%, 100%);
+  --fg-color: hsl(0, 0%, 20%);
+  --dim-color: hsl(0, 0%, 80%);
+  --err-color: hsl(0, 60%, 50%);
+  --result-color: hsl(0, 0%, 60%);
+  --active-line-color: hsl(208, 100%, 95%);
+  --selection-color: hsl(208, 70%, 80%);
+}
+
+::selection {
+  color: var(--fg-color);
+  background-color: var(--selection-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: hsl(0, 0%, 20%);
+    --fg-color: hsl(0, 0%, 100%);
+    --dim-color: hsl(0, 0%, 60%);
+    --err-color: hsl(0, 80%, 70%);
+    --result-color: hsl(0, 0%, 80%);
+    --active-line-color: hsl(28, 30%, 40%);
+    --selection-color: hsl(28, 70%, 60%);
+  }
+}
+
+body {
+  margin: 0 auto;
+  padding: 0 1em;
+  max-width: 40em;
+}

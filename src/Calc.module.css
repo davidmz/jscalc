@@ -1,0 +1,21 @@
+.lines {
+  list-style: none;
+  margin: 0;
+  padding: 1em 0;
+}
+
+.line {
+  margin-bottom: 0.5em;
+}
+
+.equal {
+  color: var(--dim-color);
+}
+
+.result {
+  color: var(--result-color);
+}
+
+.error {
+  color: var(--err-color);
+}
