@@ -11,6 +11,10 @@ export function Header() {
         <a href="https://github.com/davidmz/jscalc#readme" target="_blank">
           About
         </a>
+        {" | "}
+        <a href="https://ko-fi.com/U6U6GCQ9N" target="_blank">
+          Sponsor<span class={style.linkIcon}>☕</span>
+        </a>
       </div>
     </header>
   );
