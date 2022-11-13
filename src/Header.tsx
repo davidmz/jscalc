@@ -9,7 +9,7 @@ export function Header() {
         <a onClick={doClear}>Clear</a>
         {" | "}
         <a href="https://github.com/davidmz/jscalc#readme" target="_blank">
-          GitHub
+          About
         </a>
       </div>
     </header>
