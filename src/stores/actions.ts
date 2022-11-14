@@ -62,6 +62,9 @@ export function applyAndPrev(s: string) {
     activeLine--;
   } else if (!isFirstLine) {
     lines[activeLine] = s;
+    if (isLastLine) {
+      lines.push("");
+    }
     activeLine--;
   }
   batch(() => {
