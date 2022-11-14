@@ -16,6 +16,41 @@
   color: var(--result-color);
 }
 
+.lastLine .result {
+  display: none;
+}
+
+.lineAfterError .result * {
+  display: none;
+}
+
+.lineAfterError .result::before {
+  content: "Please fix the error above";
+  display: inline;
+  font-family: var(--font-text);
+  font-style: italic;
+  color: var(--dim-color);
+}
+
+.resultValue:empty::before {
+  font-family: var(--font-text);
+  font-style: italic;
+  content: "void";
+}
+
 .error {
+  font-family: var(--font-text);
+  font-style: italic;
   color: var(--err-color);
+}
+
+.lastLine .code {
+  color: var(--dim-color);
+  border-radius: 0.25em;
+  outline: 1px solid var(--active-line-color);
+  outline-offset: 0.3em;
+}
+
+.lastLine .code::before {
+  content: "Write something here";
 }

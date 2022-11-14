@@ -1,5 +1,8 @@
 :root {
-  font-family: "Noto Sans Mono", "Noto Emoji", monospace;
+  --font-mono: "Noto Sans Mono", "Noto Emoji", monospace;
+  --font-text: "Noto Sans", "Noto Emoji", monospace;
+
+  font-family: var(--font-mono);
   font-size: fluid(20px / 800px, 16px / 320px);
   line-height: 1.75;
   font-weight: 400;

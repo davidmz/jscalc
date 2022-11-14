@@ -1,26 +1,43 @@
 import { ActiveLine } from "./ActiveLine";
 import style from "./Calc.module.css";
 import { $activeLine, $calc } from "./stores/calc";
+import { cn } from "./utils/cn";
 
 export function Calc() {
   const activeLine = $activeLine.value;
+  let errorLine = $calc.value.findIndex((it) => it.error !== null);
+  if (errorLine === -1) {
+    errorLine = Infinity;
+  }
   return (
     <ol class={style.lines}>
-      {$calc.value.map(({ code, result, error }, idx) => (
-        <li class={style.line}>
-          <div class={style.code} onClick={() => ($activeLine.value = idx)}>
-            {idx === activeLine ? <ActiveLine code={code} /> : code}
-          </div>
+      {$calc.value.map(({ code, result, error }, idx, lines) => {
+        return (
+          <li
+            class={cn(
+              style.line,
+              idx === lines.length - 1 && style.lastLine,
+              idx > errorLine && style.lineAfterError
+            )}
+          >
+            {idx === activeLine ? (
+              <ActiveLine code={code} />
+            ) : (
+              <div class={style.code} onClick={() => ($activeLine.value = idx)}>
+                {code}
+              </div>
+            )}
 
-          {result !== undefined && (
             <div class={style.result}>
               <span class={style.equal}>{"= "}</span>
-              {JSON.stringify(result)}
+              <span class={style.resultValue}>
+                {result !== undefined && JSON.stringify(result)}
+              </span>
             </div>
-          )}
-          {error !== null && <div class={style.error}>{error}</div>}
-        </li>
-      ))}
+            {error !== null && <div class={style.error}>{error}</div>}
+          </li>
+        );
+      })}
     </ol>
   );
 }
