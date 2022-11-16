@@ -28,13 +28,16 @@ export function Calc() {
               </div>
             )}
 
-            <div class={style.result}>
-              <span class={style.equal}>{"= "}</span>
-              <span class={style.resultValue}>
-                {result !== undefined && JSON.stringify(result)}
-              </span>
-            </div>
-            {error !== null && <div class={style.error}>{error}</div>}
+            {error !== null ? (
+              <div class={style.error}>{error}</div>
+            ) : (
+              <div class={style.result}>
+                <span class={style.equal}>{"= "}</span>
+                <span class={style.resultValue}>
+                  {result !== undefined && JSON.stringify(result)}
+                </span>
+              </div>
+            )}
           </li>
         );
       })}
