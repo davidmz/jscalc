@@ -1,5 +1,6 @@
 import { ActiveLine } from "./ActiveLine";
 import style from "./Calc.module.css";
+import { CodeLine } from "./CodeLine";
 import { $activeLine, $calc } from "./stores/calc";
 import { cn } from "./utils/cn";
 
@@ -23,9 +24,7 @@ export function Calc() {
             {idx === activeLine ? (
               <ActiveLine code={code} />
             ) : (
-              <div class={style.code} onClick={() => ($activeLine.value = idx)}>
-                {code}
-              </div>
+              <CodeLine index={idx}>{code}</CodeLine>
             )}
 
             {error !== null ? (

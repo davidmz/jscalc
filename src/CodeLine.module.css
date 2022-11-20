@@ -1,0 +1,36 @@
+:root {
+  --comment-color: hsl(208, 40%, 70%);
+  --operator-color: hsl(0, 0%, 50%);
+  --punctuation-color: hsl(0, 0%, 40%);
+  --string-color: hsl(208, 60%, 40%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --comment-color: hsl(28, 40%, 60%);
+    --operator-color: hsl(0, 0%, 70%);
+    --punctuation-color: hsl(0, 0%, 80%);
+    --string-color: hsl(28, 60%, 60%);
+  }
+}
+
+.comment {
+  font-family: var(--font-text);
+  font-style: italic;
+
+  color: var(--comment-color);
+}
+
+.operator {
+  color: var(--operator-color);
+}
+
+.punctuation {
+  color: var(--punctuation-color);
+}
+
+.string,
+.template-punctuation,
+.interpolation-punctuation {
+  color: var(--string-color);
+}
