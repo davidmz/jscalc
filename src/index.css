@@ -28,6 +28,8 @@
   --result-color: hsl(0, 0%, 60%);
   --active-line-color: hsl(208, 100%, 95%);
   --selection-color: hsl(208, 70%, 80%);
+  --banner-bg-color: hsl(208, 75%, 50%);
+  --banner-color: hsl(0, 0%, 100%);
 }
 
 ::selection {

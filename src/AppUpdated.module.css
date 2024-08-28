@@ -1,0 +1,17 @@
+.appUpdated {
+  background-color: var(--banner-bg-color);
+  color: var(--banner-color);
+  padding: 0 0.5em;
+  margin-bottom: 0.25em;
+  position: sticky;
+  top: 0;
+  border-bottom-left-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
+  font-size: 0.8em;
+}
+
+.reloadBtn {
+  all: unset;
+  cursor: pointer;
+  text-decoration: underline;
+}
