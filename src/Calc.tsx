@@ -18,7 +18,7 @@ export function Calc() {
             class={cn(
               style.line,
               idx === lines.length - 1 && style.lastLine,
-              idx > errorLine && style.lineAfterError
+              idx > errorLine && style.lineAfterError,
             )}
           >
             {idx === activeLine ? (

@@ -12,7 +12,7 @@ type Props = { children: string; index: number };
 export function CodeLine({ children: code, index }: Props) {
   const tokens = useMemo(
     () => Prism.tokenize(code, Prism.languages.javascript),
-    [code]
+    [code],
   );
 
   return (

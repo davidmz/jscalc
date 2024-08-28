@@ -6,7 +6,7 @@ import { persistentSignal } from "../utils/persistentSignal";
 export const $lines = persistentSignal(
   "code",
   ["2 + 2", "_ + 1"],
-  isArray(isString)
+  isArray(isString),
 );
 
 $lines.value = [...$lines.value.map((l) => l.trim()).filter(Boolean), ""];
@@ -19,7 +19,7 @@ export const $calc = computed(() =>
     code,
     result: $results.value[idx],
     error: idx === $results.value.length ? $error.value : null,
-  }))
+  })),
 );
 
 export const $activeLine = signal($lines.value.length - 1);
@@ -40,7 +40,7 @@ effect(() => {
       }),
     {
       once: true,
-    }
+    },
   );
 });
 
@@ -53,8 +53,8 @@ function getWorkerCode(lines: string[]): string {
       .map(
         (line) =>
           `_ = eval(${JSON.stringify(
-            line.replace(/(\d+),(\d+)/g, "$1.$2") || "undefined"
-          )}); __jsCalcResult.push(_);`
+            line.replace(/(\d+),(\d+)/g, "$1.$2") || "undefined",
+          )}); __jsCalcResult.push(_);`,
       )
       .join("\n")}
     postMessage([__jsCalcResult, null]);

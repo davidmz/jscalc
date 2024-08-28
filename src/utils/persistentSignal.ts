@@ -11,7 +11,7 @@ try {
 export function persistentSignal<T>(
   key: string,
   initial: T,
-  isValidType: Guard<T>
+  isValidType: Guard<T>,
 ): Signal<T> {
   const sig = signal(initial);
   if (!supported) {
