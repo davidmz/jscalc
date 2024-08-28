@@ -15,6 +15,7 @@ export default defineConfig({
         description: "A simple JavaScript-besed calculator",
         id: "/?pwa=1",
         start_url: "/",
+        display: "standalone",
         icons: [
           { src: "/favicon.ico", type: "image/x-icon", sizes: "32x32" },
           { src: "/icon-192.png", type: "image/png", sizes: "192x192" },
